@@ -32,13 +32,13 @@ RSpec.describe Frog, type: :model do
   let!(:garry) { bog.frogs.create!(name: "garry", age: 4, singing: true) }
 
   it 'exists' do
-    expect(gary).to be_a(Frog)
+    expect(garry).to be_a(Frog)
   end
 
   it 'has attributes' do
     # Same garry
     expect(garry.name).to eq('garry')
     expect(garry.age).to eq(4)
-    expect(garry.singing).to be(True)
+    expect(garry.singing).to be(true)
   end
 end
