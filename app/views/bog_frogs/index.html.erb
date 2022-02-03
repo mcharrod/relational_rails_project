@@ -1,7 +1,7 @@
 <h1>All frogs in <%= @bog.name %></h1>
 
 <% @bog_frogs.each do |froge| %>
-<%= froge.name %>
-<%= froge.age %>
-<%= froge.singing %>
+<p>Name: <%= froge.name %></p>
+<p>Age: <%= froge.age %></p>
+<p>Sitting on log?<%= froge.singing %></p>
 <% end %>
