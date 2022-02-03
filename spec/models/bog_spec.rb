@@ -18,4 +18,10 @@ RSpec.describe Bog, type: :model do
   describe 'relationship' do
     it { should have_many(:frogs) }
   end
+
+  # describe ".class_method" do
+  # end
+
+  # describe "#instance_method" do
+  # end 
 end
