@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: 'welcome#index'
   get '/bogs', to: 'bogs#index'
   get '/bogs/:id', to: 'bogs#show'
 
