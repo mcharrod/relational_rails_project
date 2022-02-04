@@ -2,7 +2,7 @@
 
 This is a rails app with a one - to - many relationship database, completed as part of the Turing School of Software and Design curriculum. The database design can be found [here](https://app.dbdesigner.net/designer/schema/484695). The spec requirements can be found [here](https://backend.turing.edu/module2/projects/relational_rails). The one to many relationship I set was frogs to bogs. 
 
-![alt text](<img width="710" alt="Screen Shot 2022-02-04 at 2 35 33 PM" src="https://user-images.githubusercontent.com/64751946/152608629-0e894a53-5d9c-4508-86f8-a7be1b8d3825.png">)
+![table design](https://github.com/mcharrod/relational_rails_project/blob/add_image/Pic/Tables.png)
 
 
 ## gems 
