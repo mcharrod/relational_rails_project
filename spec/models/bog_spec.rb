@@ -8,7 +8,7 @@ RSpec.describe Bog, type: :model do
   end
 
   describe 'validations' do
-    # this test should not pass, still figuring out validations
+    # this test should give an error 
     it { should allow_value(3).for(:radioactive) }
 
     it { should validate_presence_of(:name) }
@@ -23,5 +23,5 @@ RSpec.describe Bog, type: :model do
   # end
 
   # describe "#instance_method" do
-  # end 
+  # end
 end
