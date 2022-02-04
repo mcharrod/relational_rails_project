@@ -24,4 +24,10 @@ RSpec.describe 'frog index', type: :feature do
     expect(page).to have_content(@jr.age)
     expect(page).to have_content(@jr.singing)
   end
+
+  it 'has link on every page to navigate to the index' do
+    visit '/bogs'
+
+    expect(page).to have_link("View all frogs in existence")
+  end
 end
