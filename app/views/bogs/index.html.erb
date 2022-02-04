@@ -1,5 +1,7 @@
 <h1>All Bogs </h1>
 
-<% @bogs.each do |bog| %>
-<h3><%= bog.name %></h3>
-<% end %>
+  <%= link_to "View all frogs in existence", '/frogs' %>
+
+  <% @bogs.each do |bog| %>
+    <h3><%= bog.name %></h3>
+  <% end %>
