@@ -1,0 +1,8 @@
+<h1>All frogs in existence</h1>
+
+<% @frogs.each do |froge| %>
+  <p> Gimme the frog boys </p>
+  <h3><%= froge.name %></h3>
+  <p>How old is this frog? <%= froge.age %></p>
+  <p>Is it chillin on a log? <%= froge.singing %></p><br>
+<% end %>
