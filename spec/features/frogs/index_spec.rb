@@ -26,8 +26,29 @@ RSpec.describe 'frog index', type: :feature do
   end
 
   it 'has link on every page to navigate to the index' do
-    visit '/bogs'
+    visit '/'
+    click_link("View all frogs in existence")
 
-    expect(page).to have_link("View all frogs in existence")
+    expect(current_path).to eq('/frogs')
+
+    visit '/bogs'
+    click_link("View all frogs in existence")
+
+    expect(current_path).to eq('/frogs')
+
+    visit "/bogs/#{@kermi_bog.id}"
+    click_link("View all frogs in existence")
+
+    expect(current_path).to eq('/frogs')
+
+    visit "/frogs/#{@jr.id}"
+    click_link("View all frogs in existence")
+
+    expect(current_path).to eq('/frogs')
+
+    visit "/bogs/#{@kermi_bog.id}/frogs"
+    click_link("View all frogs in existence")
+
+    expect(current_path).to eq('/frogs')
   end
 end

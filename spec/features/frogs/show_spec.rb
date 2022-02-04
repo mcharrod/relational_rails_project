@@ -7,7 +7,7 @@ RSpec.describe 'frog show page', type: :feature do
     @tony = @bog.frogs.create!(name: "Anthony Hopkins", age: 15, singing: false)
   end
 
-  it 'does thing' do
+  it 'displays all data for one frog' do
     visit "/frogs/#{@tony.id}"
 
     expect(page).to have_content("Meet #{@tony.name}!")
