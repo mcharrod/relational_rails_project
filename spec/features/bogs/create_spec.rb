@@ -19,7 +19,6 @@ RSpec.describe 'create bog page' do
     # expect(page).to have_content('Bog not created: Missing required information')
 
     expect(current_path).to eq('/bogs')
-    save_and_open_page
     expect(page).to have_content("Froggy School")
   end
 end
