@@ -8,7 +8,7 @@ RSpec.describe Bog, type: :model do
   end
 
   describe 'validations' do
-    # this test should give an error 
+    # this test should give an error
     it { should allow_value(3).for(:radioactive) }
 
     it { should validate_presence_of(:name) }
@@ -18,10 +18,4 @@ RSpec.describe Bog, type: :model do
   describe 'relationship' do
     it { should have_many(:frogs) }
   end
-
-  # describe ".class_method" do
-  # end
-
-  # describe "#instance_method" do
-  # end
 end
