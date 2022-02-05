@@ -15,6 +15,14 @@ RSpec.describe 'bog index', type: :feature do
     expect(page).to have_content(@bogington.name)
   end
 
-  it 'has a link to frog index page from every page on site' do
+  # pending
+  xit 'has a link to frog index page from every page on site' do
   end
+
+  it 'has a link to create a new bog' do
+    visit '/bogs'
+    click_link("Create new bog")
+
+    expect(current_path).to eq('/bogs/new')
+  end 
 end

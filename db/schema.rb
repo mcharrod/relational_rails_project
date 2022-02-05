@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_015129) do
   create_table "bogs", force: :cascade do |t|
     t.string "name"
     t.float "ph"
-    t.boolean "radioactive"
+    t.boolean "radioactive", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,24 +33,5 @@ ActiveRecord::Schema.define(version: 2022_02_02_015129) do
     t.index ["bog_id"], name: "index_frogs_on_bog_id"
   end
 
-  create_table "pokemons", force: :cascade do |t|
-    t.string "name"
-    t.integer "hp"
-    t.boolean "in_battle"
-    t.bigint "trainer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["trainer_id"], name: "index_pokemons_on_trainer_id"
-  end
-
-  create_table "trainers", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.boolean "certified"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "frogs", "bogs"
-  add_foreign_key "pokemons", "trainers"
 end

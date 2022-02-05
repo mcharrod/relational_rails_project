@@ -1,7 +1,8 @@
-<h1>Bog information</h1>
+<%= link_to "View all frogs in existence", '/frogs' %><br>
 
-  <%= link_to "View all frogs in existence", '/frogs' %>
+  <h1>Bog information</h1>
 
-  <p>Bog name: <%= @bog.name %></p>
-  <p>Bog ph: <%= @bog.ph %></p>
-  <p>Is this bog radioactive? <%= @bog.radioactive %></p>
+    <p>Bog name: <%= @bog.name %></p>
+    <p>Bog ph: <%= @bog.ph %></p>
+    <p>"Frog population for this bog: <%= @bog.population %></p>
+    <p>Is this bog radioactive? <%= @bog.radioactive %></p>

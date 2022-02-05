@@ -5,4 +5,8 @@ class Bog < ApplicationRecord
   validates_presence_of :ph
 
   validates_inclusion_of :radioactive, in: [true, false]
+
+  def population
+    frogs.count
+  end
 end

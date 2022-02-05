@@ -3,7 +3,7 @@ class CreateBog < ActiveRecord::Migration[5.2]
     create_table :bogs do |t|
       t.string :name
       t.float :ph
-      t.boolean :radioactive
+      t.boolean :radioactive, default: false
       t.datetime :created_at
       t.datetime :updated_at
     end
