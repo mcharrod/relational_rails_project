@@ -7,16 +7,14 @@ RSpec.describe 'create bog page' do
     expect(page).to have_field("Bog ph")
   end
 
+  # pending: authentication token issue, will only sometimes create new bog
   it 'creates a new bog' do
     visit '/bogs/new'
 
     fill_in("Bog name", with: "Froggy School")
     fill_in("Bog ph", with: 5.7)
     find('#dropdown_list', :text => 'false').click
-    # select false, :from => :radioactive
     click_button("Save")
-
-    # expect(page).to have_content('Bog not created: Missing required information')
 
     expect(current_path).to eq('/bogs')
     expect(page).to have_content("Froggy School")
