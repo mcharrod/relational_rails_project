@@ -1,0 +1,5 @@
+@cattail = Bog.find_or_create_by!(name: "Cattail waters", ph: 4.7, radioactive: false)
+@log = Bog.find_or_create_by!(name: "The log lodge", ph: 5.7, radioactive: false)
+# @moss = Bog.find_or_create_by!(name: "Mossy Oaks", ph: 5.0, radioactive: false)
+# @glow = Bog.find_or_create_by!(name: "Glowing Peats", ph: 1.9, radioactive: true)
+# @neon = Bog.find_or_create_by!(name: "Neon waters", ph: 2.8, radioactive: true)
