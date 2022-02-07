@@ -51,8 +51,7 @@ RSpec.describe 'bog index', type: :feature do
     expect(current_path).to eq('/bogs/new')
   end
 
-  xit 'sorts by most recently created' do
-    pending("I don't know how to make records not create at the exact same time")
+  it 'sorts by most recently created' do
     visit '/bogs'
     save_and_open_page
 

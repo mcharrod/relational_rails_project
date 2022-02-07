@@ -7,13 +7,23 @@ RSpec.describe 'create bog page' do
     expect(page).to have_field("Bog ph")
   end
 
+  it 'links to a new page from bog index' do
+    visit '/bogs'
+    click_link 'Create new bog'
+
+    expect(current_path).to eq('/bogs/new')
+  end
+
   # pending: authentication token issue, will only sometimes create new bog
-  it 'creates a new bog' do
+  it 'creates a new bog (create method is buggy, but test passes)' do
+    # visit '/bogs'
+    # click_link 'Create new bog'
     visit '/bogs/new'
 
     fill_in("Bog name", with: "Froggy School")
     fill_in("Bog ph", with: 5.7)
-    find('#dropdown_list', :text => 'false').click
+
+    select "false", :from => "radioactive"
     click_button("Save")
 
     expect(current_path).to eq('/bogs')

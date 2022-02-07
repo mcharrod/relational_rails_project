@@ -53,4 +53,7 @@ RSpec.describe 'one bogs frogs index' do
     expect(@demi.name).to appear_before(@jr.name)
     expect(@jr.name).to appear_before(@zack.name)
   end
+
+  xit 'creates frog in one bog (creation bug)' do
+  end 
 end

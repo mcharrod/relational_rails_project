@@ -1,5 +1,5 @@
 class Bog < ApplicationRecord
-  has_many :frogs
+  has_many :frogs, dependent: :destroy
 
   validates_presence_of :name
   validates_presence_of :ph
@@ -7,10 +7,14 @@ class Bog < ApplicationRecord
   validates_inclusion_of :radioactive, in: [true, false]
 
   def population
-    frogs.count
+    self.frogs.count
+  end
+
+  def self.recently_created
+    order(created_at: :desc)
   end
 
   def alphabetized_frogs
-    frogs.order(:name)
+    self.frogs.order(:name)
   end
 end

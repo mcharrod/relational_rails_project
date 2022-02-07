@@ -11,9 +11,14 @@ class BogsController < ApplicationController
   end
 
   def create
-    @bog = Bog.new(bog_params)
-    @bog.save
+    bog = Bog.new(bog_params)
+    bog.save
       redirect_to '/bogs'
+  end
+
+  def destroy
+    bog = Bog.find(params[:id])
+    bog.destroy
   end
 
   private

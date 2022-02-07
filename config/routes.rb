@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/bogs/new', to: 'bogs#new'
   get '/bogs/:id', to: 'bogs#show'
   post '/bogs', to: 'bogs#create'
+  delete '/bogs/:id', to: 'bogs#destroy'
 
   get '/frogs', to: 'frogs#index'
   get '/frogs/:id', to: 'frogs#show'
