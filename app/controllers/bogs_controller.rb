@@ -8,24 +8,13 @@ class BogsController < ApplicationController
   end
 
   def new
-    @bog = Bog.new
   end
-
 
   def create
     @bog = Bog.new(bog_params)
-    if @bog.save
+    @bog.save
       redirect_to '/bogs'
-    else
-      flash.now[:error] = 'Bog not created: Missing required information'
-      render :new
-    end
   end
-  # 
-  # def create
-  #   @bog = Bog.new(bog_params)
-  #   redirect_to('/bogs')
-  # end
 
   private
   def bog_params
