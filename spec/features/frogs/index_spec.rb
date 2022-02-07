@@ -70,7 +70,6 @@ RSpec.describe 'Singing frogs only index' do
 
   it 'only shows frogs which are singing' do
     visit '/frogs'
-    save_and_open_page
 
     expect(page).not_to have_content(@frank.name)
     expect(page).not_to have_content(@danny.name)
