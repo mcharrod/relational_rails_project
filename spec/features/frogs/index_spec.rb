@@ -4,9 +4,9 @@ RSpec.describe 'frog index', type: :feature do
   before do
     @kermi_bog = Bog.create!(name: "Kermi", ph: 4.5, radioactive: false)
 
-    @frogger = @kermi_bog.frogs.create!(name: "Frogger Ribbit", age: 3, singing: false)
+    @frogger = @kermi_bog.frogs.create!(name: "Frogger Ribbit", age: 3, singing: true)
     @jim = @kermi_bog.frogs.create!(name: "Jim Hopper", age: 30, singing: true)
-    @jr = @kermi_bog.frogs.create!(name: "Ribbit Downey Jr.", age: 15, singing: false)
+    @jr = @kermi_bog.frogs.create!(name: "Ribbit Downey Jr.", age: 15, singing: true)
   end
 
   it 'displays all attributes of all frogs on page' do
@@ -50,5 +50,29 @@ RSpec.describe 'frog index', type: :feature do
     click_link("View all frogs in existence")
 
     expect(current_path).to eq('/frogs')
+  end
+end
+
+RSpec.describe 'Singing frogs only index' do
+  before do
+    @rock = Bog.create!(name: "Rock Concert Bog", ph: 5.6, radioactive: true)
+
+    # singing celebrity frogs
+    @demi = @rock.frogs.create!(name: "Demi Lovatoad", age: 30, singing: true)
+    @iggy = @rock.frogs.create!(name: "Iggy Hop", age: 30, singing: true)
+    @ozzy = @rock.frogs.create!(name: "Oggy Frogspawn", age: 50, singing: true)
+    @zack = @rock.frogs.create!(name: "Zack Effrog", age: 50, singing: true)
+
+    # non - singing frogs (concert goers)
+    @frank = @rock.frogs.create!(name: "Franklin Frog", age: 12, singing: false)
+    @danny = @rock.frogs.create!(name: "Danny Devitoad", age: 68, singing: false)
+  end
+
+  it 'only shows frogs which are singing' do
+    visit '/frogs'
+    save_and_open_page
+
+    expect(page).not_to have_content(@frank.name)
+    expect(page).not_to have_content(@danny.name)
   end
 end
