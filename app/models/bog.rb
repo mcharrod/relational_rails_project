@@ -9,4 +9,8 @@ class Bog < ApplicationRecord
   def population
     frogs.count
   end
+
+  def alphabetized_frogs
+    frogs.order(:name)
+  end
 end
