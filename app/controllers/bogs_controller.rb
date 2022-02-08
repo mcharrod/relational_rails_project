@@ -22,6 +22,10 @@ class BogsController < ApplicationController
     redirect_to('/bogs')
   end
 
+  def edit
+    @bog = Bog.find(params[:id])
+  end
+
   private
   def bog_params
     params.permit(:name, :ph, :radioactive)
