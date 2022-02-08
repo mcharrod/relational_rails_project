@@ -33,7 +33,7 @@ class BogsController < ApplicationController
   end
 
   private
-  def bog_params
-    params.permit(:name, :ph, :radioactive)
-  end
+    def bog_params
+      params.permit(:name, :ph, :radioactive)
+    end
 end

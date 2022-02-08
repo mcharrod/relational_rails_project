@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/frogs/:id', to: 'frogs#show'
   get '/frogs/:id/edit', to: 'frogs#edit'
   patch '/frogs/:id', to: 'frogs#update'
+  delete '/frogs/:id', to: 'frogs#destroy'
 
   get '/bogs/:id/frogs', to: 'bog_frogs#index'
   get '/bogs/:id/frogs/new', to: 'bog_frogs#new'

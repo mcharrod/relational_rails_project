@@ -65,6 +65,6 @@ RSpec.describe 'bog index', type: :feature do
     within("#bog_#{@log.id}") do
       click_button("Update this bog")
     end
-    expect(current_path).to eq("bogs/#{@log.id}/edit")
+    expect(current_path).to eq("/bogs/#{@log.id}/edit")
   end
 end

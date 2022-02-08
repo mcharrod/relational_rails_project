@@ -9,8 +9,9 @@ RSpec.describe "update frog" do
 
   it 'frog show page has a link to the update page' do
     visit "/frogs/#{@zack.id}"
+    save_and_open_page
 
-    click_link("Update this frog")
+    click_button("Update this frog")
     expect(current_path).to eq("/frogs/#{@zack.id}/edit")
     # expect(page).to have_content("thing")
   end
@@ -20,7 +21,7 @@ RSpec.describe "update frog" do
 
     expect(page).to have_content("Zack Effrog")
 
-    click_link("Update this frog")
+    click_button("Update this frog")
     fill_in("Frog name", with: "Zack Attack")
     click_button("Save")
 
