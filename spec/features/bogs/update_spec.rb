@@ -11,4 +11,18 @@ RSpec.describe 'update the bog' do
     click_link("Update this bog")
     expect(current_path).to eq("/bogs/#{@log.id}/edit")
   end
+
+  it 'has a form to update the bog information' do
+    visit "/bogs/#{@log.id}"
+
+    expect(page).to have_content("The log lodge")
+
+    click_link("Update this bog")
+    fill_in("Bog name", with: "The loggy lodge")
+    click_button "Save"
+
+    expect(current_path).to eq("/bogs/#{@log.id}")
+    expect(page).not_to have_content("The log lodge")
+    expect(page).to have_content("The loggy lodge")
+  end
 end

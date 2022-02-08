@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/bogs', to: 'bogs#create'
   delete '/bogs/:id', to: 'bogs#destroy'
   get '/bogs/:id/edit', to: 'bogs#edit'
+  patch '/bogs/:id', to: 'bogs#update'
 
   get '/frogs', to: 'frogs#index'
   get '/frogs/:id', to: 'frogs#show'
