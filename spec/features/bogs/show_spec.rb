@@ -31,7 +31,4 @@ RSpec.describe 'Bog show', type: :feature do
     click_link("View all frogs in this bog")
     expect(current_path).to eq("/bogs/#{@toxic_waste.id}/frogs")
   end
-
-  xit 'updates bog (trying to figure out authentication token bug)' do 
-  end
 end

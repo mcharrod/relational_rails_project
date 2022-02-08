@@ -74,4 +74,13 @@ RSpec.describe 'Singing frogs only index' do
     expect(page).not_to have_content(@frank.name)
     expect(page).not_to have_content(@danny.name)
   end
+
+  it 'has a link to the frog edit page' do
+    visit '/frogs'
+
+    within("#frog_#{@demi.id}") do
+      click_button("Update this frog")
+    end
+    expect(current_path).to eq("/frogs/#{@demi.id}/edit")
+  end
 end

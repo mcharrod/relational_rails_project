@@ -1,8 +1,12 @@
 <%= link_to "View all frogs in existence", '/frogs' %><br>
 <%= link_to "View all bogs in existence", '/bogs' %><br>
 
+
   <h1>Meet this one particular frog, <%= @froge.name %>!</h1>
     <p>(they are a frog.)</p>
 
   <p>Age: <%= @froge.age %></p>
   <p>Currently on a log? <%= @froge.singing %></p>
+
+  <%= button_to "Update this frog", "/frogs/#{@froge.id}/edit", method: :get %>
+  <%= button_to "Delete this frog", "/frogs/#{@froge.id}", method: :delete %>

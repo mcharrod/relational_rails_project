@@ -2,9 +2,12 @@
 <p>* Only celebrity singer frogs shown</p>
 <h1>All frogs in existence</h1>
 
-<% @frogs.singing.each do |froge| %>
-  <p> Gimme the frog boys </p>
-  <h3><%= froge.name %></h3>
-  <p>How old is this frog? <%= froge.age %></p>
-  <p>Is this frog singing on a log? <%= froge.singing %></p><br>
+<% @frogs.singing.each do |frog| %>
+  <div id="frog_<%= frog.id %>">
+    <p> Another frog has appeared </p>
+    <h3><%= frog.name %></h3>
+    <p>How old is this frog? <%= frog.age %></p>
+    <p>Is this frog singing on a log? <%= frog.singing %></p>
+    <%= button_to "Update this frog", "/frogs/#{frog.id}/edit", method: :get %><br><br>
+  </div>
 <% end %>
