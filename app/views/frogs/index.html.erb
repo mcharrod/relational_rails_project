@@ -9,5 +9,6 @@
     <p>How old is this frog? <%= frog.age %></p>
     <p>Is this frog singing on a log? <%= frog.singing %></p>
     <%= button_to "Update this frog", "/frogs/#{frog.id}/edit", method: :get %><br><br>
+    <%= button_to "Delete this frog", "/frogs/#{frog.id}", method: :delete %>
   </div>
 <% end %>

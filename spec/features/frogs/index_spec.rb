@@ -83,4 +83,20 @@ RSpec.describe 'Singing frogs only index' do
     end
     expect(current_path).to eq("/frogs/#{@demi.id}/edit")
   end
+
+  it 'has a delete button next to each frog on the index' do
+    visit '/frogs'
+
+    # now she's here
+    expect(page).to have_content(@iggy.name)
+
+    within("#frog_#{@iggy.id}") do
+      click_button("Delete this frog")
+    end
+
+    expect(current_path).to eq('/frogs')
+    
+    # now she's not
+    expect(page).not_to have_content(@iggy.name)
+  end
 end
