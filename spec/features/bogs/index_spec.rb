@@ -58,4 +58,13 @@ RSpec.describe 'bog index', type: :feature do
     expect(@log.name).to appear_before(@moss.name)
     expect(@glow.name).to appear_before(@neon.name)
   end
+
+  it 'has a link to the bog update page' do
+    visit '/bogs'
+
+    within("#bog_#{@log.id}") do
+      click_button("Update this bog")
+    end
+    expect(current_path).to eq("bogs/#{@log.id}/edit")
+  end
 end
