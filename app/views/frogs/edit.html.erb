@@ -1,0 +1,9 @@
+<%= form_with url: "/frogs/#{@froge.id}", method: :patch, local: true do |form| %>
+<p><%= form.label :name, "Frog name" %></p>
+<p><%= form.text_field :name, value: @froge.name  %></p>
+<p><%= form.label :ph, "Bog ph" %></p>
+<p><%= form.text_field :age, value: @froge.age %></p>
+<p><%= form.label :singing %></p>
+<p><%= form.select :singing, options_for_select([false, true]), class: 'form-control' %></p>
+<%= form.submit %>
+<% end %>
