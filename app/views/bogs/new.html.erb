@@ -1,13 +1,12 @@
 <%= link_to "View all frogs in existence", '/frogs' %><br>
+<%= link_to "View all bogs in existence", '/bogs' %><br>
 
-<%= form_with url: '/bogs', method: :create, local: true do |form|  %>
-  <%= form.label :name, "Bog name" %>
-  <%= form.text_field :name  %>
-  <%= form.label :ph, "Bog ph" %>
-  <%= form.text_field :ph %>
-    <div id="dropdown_list">
-      <%= form.label :radioactive %>
-      <%= form.select :radioactive, options_for_select([false, true]), class: 'form-control' %>
-    </div>
+<%= form_with url: '/bogs', method: :post, local: true do |form|  %>
+  <p><%= form.label :name, "Bog name" %></p>
+  <p><%= form.text_field :name  %></p>
+  <p><%= form.label :ph, "Bog ph" %></p>
+  <p><%= form.text_field :ph %></p>
+  <p><%= form.label :radioactive %></p>
+  <p><%= form.select :radioactive, options_for_select([false, true]), class: 'form-control' %></p>
   <%= form.submit %>
 <% end %>

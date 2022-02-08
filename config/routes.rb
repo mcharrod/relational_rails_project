@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   get '/bogs/new', to: 'bogs#new'
   get '/bogs/:id', to: 'bogs#show'
   post '/bogs', to: 'bogs#create'
+  delete '/bogs/:id', to: 'bogs#destroy'
 
   get '/frogs', to: 'frogs#index'
   get '/frogs/:id', to: 'frogs#show'
 
   get '/bogs/:id/frogs', to: 'bog_frogs#index'
+  get '/bogs/:id/frogs/new', to: 'bog_frogs#new'
+  post '/bogs/:id/frogs', to: 'bog_frogs#create'
 end

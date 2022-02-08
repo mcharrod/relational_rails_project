@@ -10,8 +10,11 @@ RSpec.describe 'frog show page', type: :feature do
   it 'displays all data for one frog' do
     visit "/frogs/#{@tony.id}"
 
-    expect(page).to have_content("Meet #{@tony.name}!")
+    expect(page).to have_content("Meet this one particular frog, #{@tony.name}!")
     expect(page).to have_content(@tony.age)
     expect(page).to have_content(@tony.singing)
+  end
+
+  xit 'updates frog (authentication token bug)' do
   end
 end

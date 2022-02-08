@@ -1,9 +1,11 @@
 <%= link_to "View all frogs in existence", "/frogs" %>
+<%= link_to "View all bogs in existence", "/bogs" %><br>
+<%= link_to "Drop a frog in this bog", "/bogs/#{@bog.id}/frogs/new" %>
 
   <h1>All frogs in <%= @bog.name %></h1>
 
-  <% @bog_frogs.each do |froge| %>
-  <p>Name: <%= froge.name %></p>
+  <% @bog.alphabetized_frogs.each do |froge| %>
+  <h3>Name: <%= froge.name %></h3>
   <p>Age: <%= froge.age %></p>
-  <p>Sitting on log?<%= froge.singing %></p>
+  <p>Singing on a log? <%= froge.singing %></p>
   <% end %>

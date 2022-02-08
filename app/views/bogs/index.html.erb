@@ -1,7 +1,14 @@
-<%= link_to "View all frogs in existence", '/frogs' %><br>
-<%= link_to "Create new bog", '/bogs/new' %><br>
+<body>
+  <%= link_to "View all frogs in existence", '/frogs' %><br>
+  <%= link_to "Create new bog", '/bogs/new' %><br>
 
-  <h1>All Bogs </h1>
-    <% @bogs.each do |bog| %>
-      <h3><%= bog.name %></h3>
-    <% end %>
+    <h1>All Bogs </h1>
+      <% @bogs.recently_created.each do |bog| %>
+        <div id="bog_<%= bog.id %>">
+          <h3><%= bog.name %></h3>
+          <p>Created on: <%= bog.created_at %></p>
+          <p>Frog population: <%= bog.population %></p>
+          <%= button_to "Delete this bog", "/bogs/#{bog.id}", method: :delete %>
+        </div>
+      <% end %>
+</body>

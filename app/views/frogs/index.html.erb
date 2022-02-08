@@ -1,8 +1,10 @@
+<%= link_to "View all bogs in existence", '/bogs' %>
+<p>* Only celebrity singer frogs shown</p>
 <h1>All frogs in existence</h1>
 
-<% @frogs.each do |froge| %>
+<% @frogs.singing.each do |froge| %>
   <p> Gimme the frog boys </p>
   <h3><%= froge.name %></h3>
   <p>How old is this frog? <%= froge.age %></p>
-  <p>Is it chillin on a log? <%= froge.singing %></p><br>
+  <p>Is this frog singing on a log? <%= froge.singing %></p><br>
 <% end %>
