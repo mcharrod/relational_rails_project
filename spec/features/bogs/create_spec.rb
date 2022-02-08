@@ -14,10 +14,7 @@ RSpec.describe 'create bog page' do
     expect(current_path).to eq('/bogs/new')
   end
 
-  # pending: authentication token issue, will only sometimes create new bog
-  it 'creates a new bog (create method is buggy, but test passes)' do
-    # visit '/bogs'
-    # click_link 'Create new bog'
+  it 'creates a new bog' do
     visit '/bogs/new'
 
     fill_in("Bog name", with: "Froggy School")

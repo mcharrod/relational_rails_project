@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get '/frogs/:id', to: 'frogs#show'
 
   get '/bogs/:id/frogs', to: 'bog_frogs#index'
+  get '/bogs/:id/frogs/new', to: 'bog_frogs#new'
+  post '/bogs/:id/frogs', to: 'bog_frogs#create'
 end

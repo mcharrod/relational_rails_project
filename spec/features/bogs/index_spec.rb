@@ -1,11 +1,11 @@
 require 'rails_helper'
 RSpec.describe 'bog index', type: :feature do
   before do
-    @cattail = Bog.find_or_create_by!(name: "Cattail waters", ph: 4.7, radioactive: false)
-    @log = Bog.find_or_create_by!(name: "The log lodge", ph: 5.7, radioactive: false)
-    @moss = Bog.find_or_create_by!(name: "Mossy Oaks", ph: 5.0, radioactive: false)
-    @glow = Bog.find_or_create_by!(name: "Glowing Peats", ph: 1.9, radioactive: true)
-    @neon = Bog.find_or_create_by!(name: "Neon waters", ph: 2.8, radioactive: true)
+    @neon = Bog.find_or_create_by!(name: "Neon waters", ph: 2.8, radioactive: true, created_at: '2022-02-08 00:24:00 UTC')
+    @glow = Bog.find_or_create_by!(name: "Glowing Peats", ph: 1.9, radioactive: true, created_at: '2022-02-08 00:25:00 UTC')
+    @moss = Bog.find_or_create_by!(name: "Mossy Oaks", ph: 5.0, radioactive: false, created_at: '2022-02-08 00:26:00 UTC')
+    @log = Bog.find_or_create_by!(name: "The log lodge", ph: 5.7, radioactive: false, created_at: '2022-02-08 00:27:00 UTC')
+    @cattail = Bog.find_or_create_by!(name: "Cattail waters", ph: 4.7, radioactive: false, created_at: '2022-02-08 00:28:00 UTC')
 
     @kermit = @log.frogs.create!(name: "Kermit", age: 40, singing: true)
   end
@@ -53,7 +53,6 @@ RSpec.describe 'bog index', type: :feature do
 
   it 'sorts by most recently created' do
     visit '/bogs'
-    save_and_open_page
 
     expect(@cattail.name).to appear_before(@log.name)
     expect(@log.name).to appear_before(@moss.name)

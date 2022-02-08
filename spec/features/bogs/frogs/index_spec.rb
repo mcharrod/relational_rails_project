@@ -54,6 +54,24 @@ RSpec.describe 'one bogs frogs index' do
     expect(@jr.name).to appear_before(@zack.name)
   end
 
-  xit 'creates frog in one bog (creation bug)' do
-  end 
+  it 'has a link to create a new frog' do
+    visit "/bogs/#{@bog.id}/frogs"
+
+    click_link("Drop a frog in this bog")
+    expect(current_path).to eq("/bogs/#{@bog.id}/frogs/new")
+  end
+
+  it 'frog in a bog page has a form to create new frog' do
+    visit "/bogs/#{@bog.id}/frogs/new"
+
+    fill_in("Frog name", with: "New Frog from spec")
+    fill_in("Frog age", with: "30")
+    select "true", :from => "singing"
+    click_button("Save")
+
+    expect(current_path).to eq("/bogs/#{@bog.id}/frogs")
+    expect(page).to have_content("New Frog from spec")
+    expect(page).to have_content("30")
+    expect(page).to have_content("Singing on a log? true")
+  end
 end

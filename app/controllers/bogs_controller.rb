@@ -19,6 +19,7 @@ class BogsController < ApplicationController
   def destroy
     bog = Bog.find(params[:id])
     bog.destroy
+    redirect_to('/bogs')
   end
 
   private
