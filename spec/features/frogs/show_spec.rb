@@ -14,7 +14,4 @@ RSpec.describe 'frog show page', type: :feature do
     expect(page).to have_content(@tony.age)
     expect(page).to have_content(@tony.singing)
   end
-
-  xit 'updates frog (authentication token bug)' do
-  end
 end
