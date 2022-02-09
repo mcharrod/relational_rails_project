@@ -22,9 +22,11 @@ The gems I used are
 
 ## set up 
 
-After you've cloned down this repository to your machine, you will need to run `bundle install` to use the gems used and then `rails db:{drop,create,migrate,seed}` to set up the database. This project uses the RSpec testing suite and so you will want to run `bundle exec rspec` to run the tests. 
+After you've cloned down this repository to your machine, you will need to run `bundle install` to use the gems used and then `rails db:{drop,create,migrate,seed}` to set up the database. This project uses the RSpec testing suite and so you will want to run `bundle exec rspec` to run the tests. To see my app in action, you can go to start up the server with `rails s` command and then visit localhost:3000/  
 
 
 ## future ideas 
 
-While doing this project, I realized that my model validations will need to have some way of confirming that the boolean attribute is, in fact, a boolean. Currently, I know how to do this in Ruby, and I would like to learn how to do this utilizing an ActiveRecord Validation.
+While doing this project, I realized that my model validations will need to have some way of confirming that the boolean attribute is, in fact, a boolean. Currently, I know how to do this in Ruby, and I would like to learn how to do this utilizing an ActiveRecord Validation. 
+
+My alphabetize method and my filter by threshold method each work independently, so the user is able to see the full index alphabetized OR the unordered index reduced to objects that meet the threshold. I am interested in learning how I would build an app that can take an altered list, and then provide further alterations to that list rather than applying one alteration to the same base list. Specifically, I want the user to be able to apply a filter, and then continue adding filters, rather than them happening simultaneously which may not be desired. 
