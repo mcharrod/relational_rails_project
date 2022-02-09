@@ -3,6 +3,7 @@
 
   <p>Age: <%= @froge.age %></p>
   <p>Currently on a log? <%= @froge.singing %></p>
+  <p>Bog of residence: <%= @froge.bog.name %></p>
 
   <%= button_to "Update this frog", "/frogs/#{@froge.id}/edit", method: :get %><br>
   <%= button_to "Delete this frog", "/frogs/#{@froge.id}", method: :delete %>

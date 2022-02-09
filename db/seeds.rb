@@ -9,4 +9,4 @@
 @jr = @boggy.frogs.find_or_create_by!(name: "Ribbit Downey Jr", age: 50, singing: false)
 @demi = @boggy.frogs.find_or_create_by!(name: "Demi Lovatoad", age: 30, singing: true)
 @danny = @boggy.frogs.find_or_create_by!(name: "Danny Devitoad", age: 65, singing: false)
-@hanna = @boggy.frogs.find_or_create_by!(name: "Hannah Montana", age: 30, singing: true)
+@hanna = @boggy.frogs.find_or_create_by!(name: "Hannah Montadpole", age: 30, singing: true)
