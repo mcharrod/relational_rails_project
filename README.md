@@ -22,7 +22,7 @@ The gems I used are
 
 ## set up 
 
-After you've cloned down this repository to your machine, you will need to run `bundle install` to use the gems used and then `rails db:{drop,create,migrate,seed}` to set up the database. This project uses the RSpec testing suite and so you will want to run `bundle exec rspec` to run the tests. To see my app in action, you can go to start up the server with `rails s` command and then visit localhost:3000/  
+After you've cloned down this repository to your machine, you will need to run `bundle install` to use the gems used and then `rails db:{drop,create,migrate,seed}` to set up the database. This project uses the RSpec testing suite and so you will want to run `bundle exec rspec` to run the tests. To see my app in action, you can go to start up the server with the `rails s` command in your terminal and then visit [http://localhost:3000/](http://localhost:3000/) 
 
 
 ## future ideas 
