@@ -7,4 +7,6 @@ class Frog < ApplicationRecord
   def self.singing
     Frog.where('singing = true')
   end
+
+  
 end

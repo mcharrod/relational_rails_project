@@ -1,11 +1,9 @@
-<%= link_to "View all frogs in existence", '/frogs' %><br>
-<%= link_to "View all bogs in existence", '/bogs' %><br>
-<%= link_to "View all frogs in this bog", "/bogs/#{@bog.id}/frogs" %><br>
-<%= link_to "Update this bog", "/bogs/#{@bog.id}/edit" %>
 
   <h1>Bog information</h1>
+  <%= button_to "Update this bog", "/bogs/#{@bog.id}/edit", method: :get %><br>
+  <%= button_to "View all frogs in this bog", "/bogs/#{@bog.id}/frogs", method: :get %><br>
 
-    <p>Bog name: <%= @bog.name %></p>
+    <h3>Bog name: <%= @bog.name %></h3>
     <p>Bog ph: <%= @bog.ph %></p>
-    <p>"Frog population for this bog: <%= @bog.population %></p>
+    <p>Frog population: <%= @bog.population %></p>
     <p>Is this bog radioactive? <%= @bog.radioactive %></p>

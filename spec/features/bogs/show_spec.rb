@@ -22,7 +22,7 @@ RSpec.describe 'Bog show', type: :feature do
 
     visit "bogs/#{@toxic_waste.id}"
 
-    expect(page).to have_content("Frog population for this bog: 4")
+    expect(page).to have_content("Frog population: 4")
   end
 
   it 'has a link to that particular bogs frog index' do
