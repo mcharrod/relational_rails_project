@@ -46,7 +46,7 @@ RSpec.describe 'bog index', type: :feature do
 
   it 'has a link to create a new bog' do
     visit '/bogs'
-    click_link("Create new bog")
+    click_link("Create a new bog")
 
     expect(current_path).to eq('/bogs/new')
   end

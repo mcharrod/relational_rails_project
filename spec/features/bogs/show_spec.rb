@@ -28,7 +28,7 @@ RSpec.describe 'Bog show', type: :feature do
   it 'has a link to that particular bogs frog index' do
     visit "/bogs/#{@toxic_waste.id}"
 
-    click_link("View all frogs in this bog")
+    click_button("View all frogs in this bog")
     expect(current_path).to eq("/bogs/#{@toxic_waste.id}/frogs")
   end
 end

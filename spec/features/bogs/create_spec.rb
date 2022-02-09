@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'create bog page' do
+RSpec.describe 'bog creation' do
   it 'has a form' do
     visit '/bogs/new'
     expect(page).to have_field("Bog name")
@@ -9,7 +9,7 @@ RSpec.describe 'create bog page' do
 
   it 'links to a new page from bog index' do
     visit '/bogs'
-    click_link 'Create new bog'
+    click_link 'Create a new bog'
 
     expect(current_path).to eq('/bogs/new')
   end
