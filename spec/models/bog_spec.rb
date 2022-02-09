@@ -10,6 +10,7 @@ RSpec.describe Bog, type: :model do
   describe 'validations' do
     # this test should give an error
     it { should allow_value(3).for(:radioactive) }
+    # it { should allow_value("cupcake").for(:radioactive)}
 
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:ph) }

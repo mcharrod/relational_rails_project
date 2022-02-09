@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/bogs/:id/frogs', to: 'bog_frogs#index'
   get '/bogs/:id/frogs/new', to: 'bog_frogs#new'
   post '/bogs/:id/frogs', to: 'bog_frogs#create'
+
 end

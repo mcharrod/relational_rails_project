@@ -17,4 +17,8 @@ class Bog < ApplicationRecord
   def alphabetized_frogs
     self.frogs.order(:name)
   end
+
+  def frogs_of_age(age)
+    self.frogs.where(['age > ?', age.to_i])
+  end
 end

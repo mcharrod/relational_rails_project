@@ -1,11 +1,17 @@
-<%= link_to "View all frogs in existence", "/frogs" %>
-<%= link_to "View all bogs in existence", "/bogs" %><br>
-<%= link_to "Drop a frog in this bog", "/bogs/#{@bog.id}/frogs/new" %>
-
   <h1>All frogs in <%= @bog.name %></h1>
+  <%= link_to "Alphabetize frogs", "/bogs/#{@bog.id}/frogs?sort=asc" %><br><br>
+  <%= link_to "Drop a frog in this bog", "/bogs/#{@bog.id}/frogs/new", method: :get %><br><br>
 
-  <% @bog.alphabetized_frogs.each do |froge| %>
-  <h3>Name: <%= froge.name %></h3>
-  <p>Age: <%= froge.age %></p>
-  <p>Singing on a log? <%= froge.singing %></p>
+  <%= form_with url: "/bogs/#{@bog.id}/frogs", method: :get, local: true do |form| %>
+  <%= form.label :age, "Filter out frogs under age" %>
+  <%= form.text_field :age, value: 0 %>
+  <%= form.submit %>
+  <% end %>
+
+  <br><br>
+
+  <% @bog_frogs.each do |frog| %>
+  <h3>Name: <%= frog.name %></h3>
+  <p>Age: <%= frog.age %></p>
+  <p>Singing on a log? <%= frog.singing %></p><br>
   <% end %>

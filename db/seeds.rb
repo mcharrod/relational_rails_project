@@ -5,7 +5,8 @@
 @neon = Bog.find_or_create_by!(name: "Neon waters", ph: 2.8, radioactive: true)
 @boggy = Bog.find_or_create_by!(name: "Boggywood", ph: 4.8, radioactive: false)
 
-@zack = @boggy.frogs.create!(name: "Zack Effrog", age: 30, singing: true)
-@jr = @boggy.frogs.create!(name: "Ribbit Downey Jr", age: 50, singing: false)
-@demi = @boggy.frogs.create!(name: "Demi Lovatoad", age: 30, singing: true)
-@danny = @boggy.frogs.create!(name: "Danny Devitoad", age: 30, singing: false)
+@zack = @boggy.frogs.find_or_create_by!(name: "Zack Effrog", age: 25, singing: true)
+@jr = @boggy.frogs.find_or_create_by!(name: "Ribbit Downey Jr", age: 50, singing: false)
+@demi = @boggy.frogs.find_or_create_by!(name: "Demi Lovatoad", age: 30, singing: true)
+@danny = @boggy.frogs.find_or_create_by!(name: "Danny Devitoad", age: 65, singing: false)
+@hanna = @boggy.frogs.find_or_create_by!(name: "Hannah Montana", age: 30, singing: true)

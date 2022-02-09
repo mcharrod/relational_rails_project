@@ -1,14 +1,13 @@
-<%= link_to "View all bogs in existence", '/bogs' %>
 <p>* Only celebrity singer frogs shown</p>
 <h1>All frogs in existence</h1>
 
 <% @frogs.singing.each do |frog| %>
   <div id="frog_<%= frog.id %>">
-    <p> Another frog has appeared </p>
     <h3><%= frog.name %></h3>
     <p>How old is this frog? <%= frog.age %></p>
     <p>Is this frog singing on a log? <%= frog.singing %></p>
-    <%= button_to "Update this frog", "/frogs/#{frog.id}/edit", method: :get %><br><br>
-    <%= button_to "Delete this frog", "/frogs/#{frog.id}", method: :delete %>
+    <%= button_to "View this frog", "/frogs/#{frog.id}", method: :get %><br>
+    <%= button_to "Update this frog", "/frogs/#{frog.id}/edit", method: :get %><br>
+    <%= button_to "Delete this frog", "/frogs/#{frog.id}", method: :delete %><br><br>
   </div>
 <% end %>

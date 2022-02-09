@@ -22,13 +22,13 @@ RSpec.describe 'Bog show', type: :feature do
 
     visit "bogs/#{@toxic_waste.id}"
 
-    expect(page).to have_content("Frog population for this bog: 4")
+    expect(page).to have_content("Frog population: 4")
   end
 
   it 'has a link to that particular bogs frog index' do
     visit "/bogs/#{@toxic_waste.id}"
 
-    click_link("View all frogs in this bog")
+    click_button("View all frogs in this bog")
     expect(current_path).to eq("/bogs/#{@toxic_waste.id}/frogs")
   end
 end
