@@ -10,3 +10,7 @@
 @demi = @boggy.frogs.find_or_create_by!(name: "Demi Lovatoad", age: 30, singing: true)
 @danny = @boggy.frogs.find_or_create_by!(name: "Danny Devitoad", age: 65, singing: false)
 @hanna = @boggy.frogs.find_or_create_by!(name: "Hannah Montadpole", age: 30, singing: true)
+
+@spider = @glow.frogs.find_or_create_by!(name: "Spider Frog", age: 30, singing: false)
+@super = @glow.frogs.find_or_create_by!(name: "Super Toad", age: 35, singing: false)
+@captain = @glow.frogs.find_or_create_by!(name: "Captain Amphibian", age: 150, singing: true)
