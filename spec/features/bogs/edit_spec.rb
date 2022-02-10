@@ -8,7 +8,7 @@ RSpec.describe 'update the bog' do
   it 'has a link to update the bog' do
     visit "/bogs/#{@log.id}"
 
-    click_link("Update this bog")
+    click_button("Update this bog")
     expect(current_path).to eq("/bogs/#{@log.id}/edit")
   end
 
@@ -18,7 +18,7 @@ RSpec.describe 'update the bog' do
     # this is our old name
     expect(page).to have_content("The log lodge")
 
-    click_link("Update this bog")
+    click_button("Update this bog")
     # this is our new name
     fill_in("Bog name", with: "The loggy lodge")
     click_button "Save"
