@@ -8,5 +8,7 @@ class Frog < ApplicationRecord
     Frog.where('singing = true')
   end
 
-  
+  def time
+    self.created_at.strftime("%b %d, %Y  %I:%M:%S %p")
+  end
 end

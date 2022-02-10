@@ -21,4 +21,8 @@ class Bog < ApplicationRecord
   def frogs_of_age(age)
     self.frogs.where(['age > ?', age.to_i])
   end
+
+  def time
+    self.created_at.strftime("%b %d, %Y  %I:%M:%S %p")
+  end
 end

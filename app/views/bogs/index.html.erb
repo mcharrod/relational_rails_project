@@ -3,7 +3,7 @@
   <% @bogs.recently_created.each do |bog| %>
     <div id="bog_<%= bog.id %>">
       <h3><%= bog.name %></h3>
-      <p>Created on: <%= bog.created_at %></p>
+      <p>Created on: <%= bog.time %></p>
       <p>Frog population: <%= bog.population %></p>
       <%= button_to "View this bog", "/bogs/#{bog.id}", method: :get %><br>
       <%= button_to "Update this bog", "/bogs/#{bog.id}/edit", method: :get %><br>
