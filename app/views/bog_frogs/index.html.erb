@@ -12,6 +12,7 @@
 
   <% @bog_frogs.each do |frog| %>
   <h3>Name: <%= frog.name %></h3>
+  <p>Created on: <%= frog.time %></p>
   <p>Age: <%= frog.age %></p>
   <p>Singing on a log? <%= frog.singing %></p><br>
   <% end %>
