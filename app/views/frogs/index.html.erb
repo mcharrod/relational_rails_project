@@ -5,6 +5,7 @@
   <div id="frog_<%= frog.id %>">
     <h3><%= frog.name %></h3>
     <p>How old is this frog? <%= frog.age %></p>
+    <p>Where does this frog live? <%= frog.bog.name %></p>
     <p>Is this frog singing on a log? <%= frog.singing %></p>
     <%= button_to "View this frog", "/frogs/#{frog.id}", method: :get %><br>
     <%= button_to "Update this frog", "/frogs/#{frog.id}/edit", method: :get %><br>
