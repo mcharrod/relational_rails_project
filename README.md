@@ -1,6 +1,6 @@
 # relational_rails
 
-This is a rails app with a one - to - many relationship database, completed as part of the Turing School of Software and Design curriculum. The database design can be found [here](https://app.dbdesigner.net/designer/schema/484695). The spec requirements can be found [here](https://backend.turing.edu/module2/projects/relational_rails). The one to many relationship I set was frogs to bogs. 
+This is a rails app with a one - to - many relationship database, completed as part of the Turing School of Software and Design curriculum. The database design is as seen below. The spec requirements for this project can be found [here](https://backend.turing.edu/module2/projects/relational_rails). As a representation for a one to many relationship could be chosen, my models are frogs and bogs. 
 
 ![table design](https://github.com/mcharrod/relational_rails_project/blob/main/Pic/Tables.png)
 
